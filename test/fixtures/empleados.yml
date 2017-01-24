@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombreEmpleado: MyString
+  cargo: MyString
+  especialidad: MyString
+  art22: false
+  nacionalidad: MyString
+  rut: MyString
+  alojamiento: false
+  tipoContrato: MyString
+  edad: 
+  cargaFamiliar: false
+  estado: MyString
+  fono: MyString
+  fechaNacimiento: 2017-01-24
+  afp: MyString
+  traslado: false
+  almuerzo: false
+  fechaIngreso: 2017-01-24
+  salud: MyString
+  estadoCivil: MyString
+  experiencia: MyString
+  estudios: MyString
+  notas: MyText
+  cuadrilla: one
+
+two:
+  nombreEmpleado: MyString
+  cargo: MyString
+  especialidad: MyString
+  art22: false
+  nacionalidad: MyString
+  rut: MyString
+  alojamiento: false
+  tipoContrato: MyString
+  edad: 
+  cargaFamiliar: false
+  estado: MyString
+  fono: MyString
+  fechaNacimiento: 2017-01-24
+  afp: MyString
+  traslado: false
+  almuerzo: false
+  fechaIngreso: 2017-01-24
+  salud: MyString
+  estadoCivil: MyString
+  experiencia: MyString
+  estudios: MyString
+  notas: MyText
+  cuadrilla: two

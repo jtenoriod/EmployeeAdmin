@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tipoContrato: MyString
+  fechaIngreso: 2017-01-24
+  fechaContrato: 2017-01-24
+  diasPlazoFijo: 
+  primerVencimiento: 2017-01-24
+  renovacionContrato: 2017-01-24
+  empleado: one
+
+two:
+  tipoContrato: MyString
+  fechaIngreso: 2017-01-24
+  fechaContrato: 2017-01-24
+  diasPlazoFijo: 
+  primerVencimiento: 2017-01-24
+  renovacionContrato: 2017-01-24
+  empleado: two
