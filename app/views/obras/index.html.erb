@@ -1,0 +1,12 @@
+<h1> Obras </h1>
+<table>
+  <tr>
+    <th>Nombre obra</th>
+  </tr>
+  <% @obra.each do |obra| %>
+    <tr>
+      <td><%= obra.nombreObra %></td>
+      <td><%= link_to 'Ingresar' %></td>
+    </tr>
+  <% end %>
+</table>

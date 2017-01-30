@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   post "obras" => "obras#create_obras"
-  
+
   resources :obras
   #root 'obras#create_obras'
   root to: 'pages#index'
