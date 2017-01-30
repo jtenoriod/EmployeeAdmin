@@ -5,12 +5,8 @@ class ObrasController < ApplicationController
 
   def create
     @obra = Obra.new(obra_params)
-
-    if @obra.save
-      redirect_to @obra
-    else
-      render "new"
-    end
+    @obra.save
+    redirect_to @obra
   end
 
   def show
@@ -23,6 +19,6 @@ class ObrasController < ApplicationController
 
   private
     def obra_params
-      params.require(:obra).permit(:nombre_obra)
+      params.require(:obra).permit(:nombreObra)
     end
 end
