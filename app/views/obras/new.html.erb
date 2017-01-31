@@ -1,12 +1,5 @@
-<%= form_for :obra, url: obras_path  do |f|%>
-  <p>
-    <%= f.label :nombreObra %><br><br>
-    <%= f.text_field :nombreObra %>
-  </p>
+<h1>Crear Obra</h1>
 
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Lista Obras', obras_path %>
