@@ -5,14 +5,22 @@
     <th>Nombre obra</th>
   </tr>
   <% @obra.each do |obra| %>
-    <tr>
-      <td><%= obra.nombreObra %></td>
-      <td><%= link_to 'Ingresar' %></td>
-      <td><%= link_to 'Mostrar', obra_path(obra) %></td>
-      <td><%= link_to 'Editar', edit_obra_path(obra) %></td>
-      <td><%= link_to 'Eliminar', obra_path(obra),
+      <tr>
+        <% if admin_signed_in?   %>
+            <td><%= obra.nombreObra %></td>
+            <td><%= link_to 'Mostrar', obra_path(obra) %></td>
+            <td><%= link_to 'Editar', edit_obra_path(obra) %></td>
+            <td><%= link_to 'Eliminar', obra_path(obra),
+                            method: :delete,
+                            data: { confirm: '¿Estas seguro?' } %></td>
+        <% elsif (obra.users.map {|c| c.name}.join(', '))  == current_user.name   %>
+          <td><%= obra.nombreObra %></td>
+          <td><%= link_to 'Mostrar', obra_path(obra) %></td>
+          <td><%= link_to 'Editar', edit_obra_path(obra) %></td>
+          <td><%= link_to 'Eliminar', obra_path(obra),
                       method: :delete,
-                      data: { confirm: '¿Estas?' } %></td>
+                      data: { confirm: '¿Estas seguro?' } %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

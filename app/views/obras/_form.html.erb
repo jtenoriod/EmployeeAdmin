@@ -19,8 +19,19 @@
       <%= f.text_field :nombreObra %>
     </p>
 
+    <div class="field">
+      <%= f.label "Usuarios permitidos en Obra" %><br />
+      <%= f.collection_check_boxes :user_ids, User.all, :id, :name do |b| %>
+          <div class="collection-check-box">
+            <%= b.check_box %>
+            <%= b.label %>
+          </div>
+      <% end %>
+    </div>
+    </p>
     <p>
       <%= f.submit %>
     </p>
+
 
 <% end %>
