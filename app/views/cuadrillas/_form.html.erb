@@ -1,0 +1,41 @@
+<%= form_for [@obra, @cuadrilla] do |f| %>
+
+    <% if @cuadrilla.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@cuadrilla.errors.count, "error") %> prohibited
+            this article from being saved:
+          </h2>
+          <ul>
+            <% @cuadrilla.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <p>
+      <%= f.label :nombreCuadrilla %><br>
+      <%= f.text_field :nombreCuadrilla %>
+    </p>
+
+    <p>
+      <%= f.label :estado%><br>
+      <%= f.select :estado, ['Activo', 'Inactivo', 'Cerrado', 'Sin Presupuesto', 'Adicional en Curso'] %>
+    </p>
+
+    <p>
+      <%= f.label :fechaInicio%><br>
+      <%= f.date_select(:fechaInicio)%>
+    </p>
+
+    <p>
+      <%= f.label :comentarios%><br>
+      <%= f.text_area :comentarios, :cols => "500" , :rows => "10" %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+<% end %>

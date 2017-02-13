@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   devise_for :users
   #post "obras" => "obras#create_obras"
 
+  resources :obras do
+    resources :cuadrillas
+  end
+
   resources :obras
   root to: 'pages#index'
   get '/secret', to: 'pages#secret', as: :secret

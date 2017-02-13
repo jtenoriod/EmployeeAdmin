@@ -1,0 +1,17 @@
+<h1> Obras </h1>
+<h3> <%= link_to 'Crear Cuadrilla',  new_obra_cuadrilla_path(@obra)%></h3>
+<table>
+  <tr>
+    <th>Nombre Cuadrilla</th>
+  </tr>
+  <% @cuadrilla.each do |cuadrilla| %>
+      <tr>
+        <td><%= cuadrilla.nombreCuadrilla %></td>
+        <td><%= link_to 'Mostrar', obra_cuadrilla_path(@obra, cuadrilla) %></td>
+        <td><%= link_to 'Editar', edit_obra_cuadrilla_path(@obra, cuadrilla) %></td>
+        <td><%= link_to 'Eliminar', obra_cuadrilla_path(@obra, cuadrilla),
+                        method: :delete,
+                        data: { confirm: '¿Estas seguro?' } %></td>
+      </tr>
+  <% end %>
+</table>

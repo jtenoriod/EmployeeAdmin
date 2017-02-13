@@ -1,0 +1,78 @@
+<%= form_for [@obra, @cuadrilla] do |f| %>
+
+    <% if @cuadrilla.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@cuadrilla.errors.count, "error") %> prohibited
+            this cuadrilla from being saved:
+          </h2>
+          <ul>
+            <% @cuadrilla.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <p>
+      <%= f.label :nombreEmpleado %><br>
+      <%= f.text_field :nombreEmpleado %>
+    </p>
+
+    <p>
+      <%= f.label :cargo %><br>
+      <%= f.text_field :cargo %>
+    </p>
+
+    <p>
+      <%= f.label :especialidad %><br>
+      <%= f.text_field :especialidad %>
+    </p>
+
+    <p>
+      <%= f.label :art22%><br>
+      <%= f.check_box :art22 %>
+    </p>
+
+    <p>
+      <%= f.label :nacionalidad %><br>
+      <%= f.text_field :nacionalidad %>
+    </p>
+
+    <p>
+      <%= f.label :rut %><br>
+      <%= f.text_field :rut %>
+    </p>
+
+    <p>
+      <%= f.label :alojamiento%><br>
+      <%= f.check_box :alojamiento %>
+    </p>
+
+    <p>
+      <%= f.label :edad%><br>
+      <%= f.input :edad %>
+    </p>
+
+    <p>
+      <%= f.label :cargaFamiliar%><br>
+      <%= f.check_box :cargaFamiliar %>
+    </p>
+
+    <p>
+      <%= f.label :estado%><br>
+      <%= f.select :estado, ['Solicitud de Contratación', 'Autorizado para Contratación', 'Solicitud Rechazada', 'Contrato Vigente', 'Finiquitado', 'Observación'] %>
+    </p>
+
+
+    <p>
+      <%= f.label :activo%><br>
+      <%= f.check_box :activo %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+
+<% end %>
+

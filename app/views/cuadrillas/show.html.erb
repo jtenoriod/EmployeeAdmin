@@ -1,0 +1,8 @@
+<p>
+  <strong>Nombre Obra</strong>
+  <%@obra = Obra.find(params[:obra_id])%>
+
+  <%= @cuadrilla.nombreCuadrilla %>
+  <%= link_to 'Editar', edit_obra_cuadrilla_path(@obra, @cuadrilla) %> |
+  <%= link_to 'Back', obra_cuadrillas_path(@obra, @cuadrilla) %>
+</p>

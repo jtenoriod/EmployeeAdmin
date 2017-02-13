@@ -1,5 +1,7 @@
 class ObrasController < ApplicationController
 
+  before_action :authenticate_admin!, only: [:new, :edit, :destroy]
+
   def index
     @obra = Obra.all
   end
@@ -10,6 +12,7 @@ class ObrasController < ApplicationController
 
   def show
     @obra = Obra.find(params[:id])
+    @cuadrilla = @obra.cuadrillas(params[:id]) #REVISAR PARAMS!
   end
 
   def edit
@@ -44,6 +47,7 @@ class ObrasController < ApplicationController
 
   private
     def obra_params
-      params.require(:obra).permit(:nombreObra)
+      params.require(:obra).permit(:nombreObra, user_ids:[])
     end
+
 end
